@@ -12,6 +12,21 @@ class EscrowMarketplace(ARC4Contract):
     is_disputed: bool
     is_settled: bool
 
+
+    # Constructor - please uncomment the code and try to run it
+    # def __init__(self, val: UInt64) -> None:
+    #     self.seller = Account()
+    #     self.buyer = Account()
+    #     self.arbitrator = Account()
+    #     self.value = val
+    #     self.escrow_expiry = UInt64(0)
+    #     self.is_disputed = False
+    #     self.is_settled = False
+
+
+    #Also you can delete create_application method and use the constructor to create the escrow contract - try if it's working
+    # Create the escrow contract
+
     # Create the escrow contract
     @abimethod(allow_actions=["NoOp"], create="require")
     def create_application(
