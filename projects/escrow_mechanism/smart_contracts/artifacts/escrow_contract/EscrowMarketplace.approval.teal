@@ -9,7 +9,7 @@ main:
     // class EscrowMarketplace(ARC4Contract):
     txn NumAppArgs
     bz main_after_if_else@14
-    pushbytess 0x89cb644c 0xfdc695c2 0x31ce7597 0x34c979c9 0x4398265d 0x91b4532a 0x5121f741 0x33b3499e // method "create_application(asset,uint64,account,account,account,uint64)void", method "deposit_funds(pay)void", method "release_funds_to_seller()void", method "refund_funds_to_buyer()void", method "raise_dispute()void", method "resolve_dispute(string)void", method "expire_escrow()void", method "delete_application()void"
+    pushbytess 0x3fe4d39a 0xfdc695c2 0x31ce7597 0x34c979c9 0x4398265d 0x91b4532a 0x5121f741 0x33b3499e // method "create_application(uint64,account,account,account,uint64)void", method "deposit_funds(pay)void", method "release_funds_to_seller()void", method "refund_funds_to_buyer()void", method "raise_dispute()void", method "resolve_dispute(string)void", method "expire_escrow()void", method "delete_application()void"
     txna ApplicationArgs 0
     match main_create_application_route@3 main_deposit_funds_route@4 main_release_funds_to_seller_route@5 main_refund_funds_to_buyer_route@6 main_raise_dispute_route@7 main_resolve_dispute_route@8 main_expire_escrow_route@9 main_delete_application_route@10
 
@@ -132,8 +132,7 @@ main_deposit_funds_route@4:
     return
 
 main_create_application_route@3:
-    // smart_contracts/escrow_contract/contract.py:15-16
-    // # Create the escrow contract
+    // smart_contracts/escrow_contract/contract.py:18
     // @abimethod(allow_actions=["NoOp"], create="require")
     txn OnCompletion
     !
@@ -145,9 +144,9 @@ main_create_application_route@3:
     // class EscrowMarketplace(ARC4Contract):
     txna ApplicationArgs 1
     btoi
-    txnas Assets
     txna ApplicationArgs 2
     btoi
+    txnas Accounts
     txna ApplicationArgs 3
     btoi
     txnas Accounts
@@ -156,37 +155,26 @@ main_create_application_route@3:
     txnas Accounts
     txna ApplicationArgs 5
     btoi
-    txnas Accounts
-    txna ApplicationArgs 6
-    btoi
-    // smart_contracts/escrow_contract/contract.py:15-16
-    // # Create the escrow contract
+    // smart_contracts/escrow_contract/contract.py:18
     // @abimethod(allow_actions=["NoOp"], create="require")
     callsub create_application
     intc_1 // 1
     return
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.create_application(asset_id: uint64, value: uint64, seller: bytes, buyer: bytes, arbitrator: bytes, escrow_duration: uint64) -> void:
+// smart_contracts.escrow_contract.contract.EscrowMarketplace.create_application(value: uint64, seller: bytes, buyer: bytes, arbitrator: bytes, escrow_duration: uint64) -> void:
 create_application:
-    // smart_contracts/escrow_contract/contract.py:15-25
-    // # Create the escrow contract
+    // smart_contracts/escrow_contract/contract.py:18-26
     // @abimethod(allow_actions=["NoOp"], create="require")
     // def create_application(
     //     self,
-    //     asset_id: Asset,
     //     value: UInt64,
     //     seller: Account,
     //     buyer: Account,
     //     arbitrator: Account,
     //     escrow_duration: UInt64,  # Duration in seconds
     // ) -> None:
-    proto 6 0
-    // smart_contracts/escrow_contract/contract.py:26
-    // self.asset_id = asset_id.id
-    pushbytes "asset_id"
-    frame_dig -6
-    app_global_put
+    proto 5 0
     // smart_contracts/escrow_contract/contract.py:27
     // self.value = value
     bytec_2 // "value"

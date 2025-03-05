@@ -6,24 +6,23 @@ class EscrowMarketplace(ARC4Contract):
     # State variables
     seller: Account
     buyer: Account
-    arbitrator: Account
+    arbitrator: Account # third-party
     amount: UInt64
-    escrow_expiry: UInt64  # Timestamp for escrow expiry
+    escrow_expiry: UInt64  
     is_disputed: bool
     is_settled: bool
 
-    # Create the escrow contract
+
+
     @abimethod(allow_actions=["NoOp"], create="require")
     def create_application(
         self,
-        asset_id: Asset,
         value: UInt64,
         seller: Account,
         buyer: Account,
         arbitrator: Account,
         escrow_duration: UInt64,  # Duration in seconds
     ) -> None:
-        self.asset_id = asset_id.id
         self.value = value
         self.seller = seller
         self.buyer = buyer
