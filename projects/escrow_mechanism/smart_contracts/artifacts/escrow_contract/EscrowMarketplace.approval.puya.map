@@ -1,0 +1,3221 @@
+{
+  "version": 3,
+  "sources": [
+    "../../escrow_contract/contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAIA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;AAAA;;AA0GK;;AAAA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AATA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AAjBA;;AAAA;AAAA;AAAA;;AAAA;AAhFL;;;AAAA;;;AAgFK;;;AAAA;;AATA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AAhBA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AAhBA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AARA;;AAAA;AAAA;AAAA;;AAAA;AA/BL;;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AA+BK;;;AAAA;;AApBA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAXL;;;AAAA;AAAA;;AAAA;;;AAAA;AAAA;;;AAAA;AAAA;;AAAA;;;AAAA;AAAA;;AAAA;;;AAAA;AAAA;;AAAA;;;AAAA;AAWK;;;AAAA;;AAAL;;;AAUQ;;;;;;;;;;AAAA;;AAAA;AACA;AAAA;;AAAA;AACA;AAAA;;AAAA;AACA;AAAA;;AAAA;AACA;;AAAA;;AAAA;AACqB;;AAAA;;AAAA;AAArB;;AAAA;AAAA;AACA;;AAAmB;AAAnB;AACA;AAAkB;AAAlB;;AAGR;;;AAEe;;AAAc;AAAA;AAAA;AAAA;AAAd;AAAP;AACO;;AAAA;;AAAoB;;AAApB;AAAP;AACO;;AAAA;;AAAkB;AAAA;AAAA;AAAA;AAAlB;AAAP;AACW;AAAA;AAAA;AAAA;AAAJ;AAAP;;AAGR;;;AAEe;;AAAA;AAAe;AAAA;AAAA;AAAA;AAAY;AAAA;;AAAA;AAAA;AAAA;;AAAA;AAA3B;AAAA;;;AAAA;;AAAA;;AAAA;AAAA;;;;AAAP;AACW;AAAA;AAAA;AAAA;AAAJ;AAAP;AAGA;AACa;AAAA;AAAA;AAAA;AACF;AAAA;AAAA;AAAA;;;;;AAFX;;;AAGQ;;;AAHR;AAOA;AAAkB;AAAlB;;;;;;AAGR;;;AAEe;;AAAA;AAAe;AAAA;AAAA;AAAA;AAAa;AAAA;;AAAA;AAAA;AAAA;;AAAA;AAA5B;AAAA;;;AAAA;;AAAA;;AAAA;AAAA;;;;AAAP;AACW;AAAA;AAAA;AAAA;AAAJ;AAAP;AAGA;AACa;AAAA;AAAA;AAAA;AACF;AAAA;AAAA;AAAA;;;;;AAFX;;;AAGQ;;;AAHR;AAOA;AAAkB;AAAlB;;;;;;AAGR;;;AAEe;;AAAA;AAAe;AAAA;AAAA;AAAA;AAAY;AAAA;AAAA;AAAA;AAAA;;AAAA;AAA3B;AAAA;;;AAAA;;AAAA;;AAAA;AAAA;;;;AAAP;AACW;AAAA;;AAAA;AAAA;AAAJ;AAAP;AACW;AAAA;AAAA;AAAA;AAAJ;AAAP;AAEA;;AAAmB;AAAnB;;;;;;AAGR;;;AAEe;;AAAc;AAAA;;AAAA;AAAA;AAAd;AAAP;AACO;AAAA;;AAAA;AAAA;AAAP;AACW;AAAA;AAAA;AAAA;AAAJ;AAAP;AAEG;;AAAY;;;;;;;;;;;;;;;;;;;AAAZ;AAAX;;;AACY;;;AAOJ;AAAkB;AAAlB;;AANK;;AAAY;;;;;;;;;;;;;;;;;AAAZ;AAAb;AACY;;;;;;AAUG;;AAA2B;AAAA;;AAAA;AAAA;AAA3B;AAAP;AACW;AAAA;AAAA;AAAA;AAAJ;AAAP;AAGA;;;;AAKO;AAAA;AAAA;AAAA;AAAP;AACO;;AAAc;;AAAd;AAAP;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "algopy.arc4.ARC4Contract.approval_program",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 0 1 1000"
+    },
+    "7": {
+      "op": "bytecblock \"is_settled\" \"buyer\" \"value\" \"seller\" \"arbitrator\" \"is_disputed\" \"escrow_expiry\""
+    },
+    "76": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "78": {
+      "op": "bz main_after_if_else@14",
+      "stack_out": []
+    },
+    "81": {
+      "op": "pushbytess 0x89cb644c 0xfdc695c2 0x31ce7597 0x34c979c9 0x4398265d 0x91b4532a 0x5121f741 0x33b3499e // method \"create_application(asset,uint64,account,account,account,uint64)void\", method \"deposit_funds(pay)void\", method \"release_funds_to_seller()void\", method \"refund_funds_to_buyer()void\", method \"raise_dispute()void\", method \"resolve_dispute(string)void\", method \"expire_escrow()void\", method \"delete_application()void\"",
+      "defined_out": [
+        "Method(create_application(asset,uint64,account,account,account,uint64)void)",
+        "Method(delete_application()void)",
+        "Method(deposit_funds(pay)void)",
+        "Method(expire_escrow()void)",
+        "Method(raise_dispute()void)",
+        "Method(refund_funds_to_buyer()void)",
+        "Method(release_funds_to_seller()void)",
+        "Method(resolve_dispute(string)void)"
+      ],
+      "stack_out": [
+        "Method(create_application(asset,uint64,account,account,account,uint64)void)",
+        "Method(deposit_funds(pay)void)",
+        "Method(release_funds_to_seller()void)",
+        "Method(refund_funds_to_buyer()void)",
+        "Method(raise_dispute()void)",
+        "Method(resolve_dispute(string)void)",
+        "Method(expire_escrow()void)",
+        "Method(delete_application()void)"
+      ]
+    },
+    "123": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(create_application(asset,uint64,account,account,account,uint64)void)",
+        "Method(delete_application()void)",
+        "Method(deposit_funds(pay)void)",
+        "Method(expire_escrow()void)",
+        "Method(raise_dispute()void)",
+        "Method(refund_funds_to_buyer()void)",
+        "Method(release_funds_to_seller()void)",
+        "Method(resolve_dispute(string)void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(create_application(asset,uint64,account,account,account,uint64)void)",
+        "Method(deposit_funds(pay)void)",
+        "Method(release_funds_to_seller()void)",
+        "Method(refund_funds_to_buyer()void)",
+        "Method(raise_dispute()void)",
+        "Method(resolve_dispute(string)void)",
+        "Method(expire_escrow()void)",
+        "Method(delete_application()void)",
+        "tmp%2#0"
+      ]
+    },
+    "126": {
+      "op": "match main_create_application_route@3 main_deposit_funds_route@4 main_release_funds_to_seller_route@5 main_refund_funds_to_buyer_route@6 main_raise_dispute_route@7 main_resolve_dispute_route@8 main_expire_escrow_route@9 main_delete_application_route@10",
+      "stack_out": []
+    },
+    "144": {
+      "block": "main_after_if_else@14",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "145": {
+      "op": "return",
+      "stack_out": []
+    },
+    "146": {
+      "block": "main_delete_application_route@10",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%44#0"
+      ],
+      "stack_out": [
+        "tmp%44#0"
+      ]
+    },
+    "148": {
+      "op": "pushint 5 // DeleteApplication",
+      "defined_out": [
+        "DeleteApplication",
+        "tmp%44#0"
+      ],
+      "stack_out": [
+        "tmp%44#0",
+        "DeleteApplication"
+      ]
+    },
+    "150": {
+      "op": "==",
+      "defined_out": [
+        "tmp%45#0"
+      ],
+      "stack_out": [
+        "tmp%45#0"
+      ]
+    },
+    "151": {
+      "error": "OnCompletion is not DeleteApplication",
+      "op": "assert // OnCompletion is not DeleteApplication",
+      "stack_out": []
+    },
+    "152": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "tmp%46#0"
+      ]
+    },
+    "154": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "155": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.delete_application",
+      "op": "callsub delete_application"
+    },
+    "158": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "159": {
+      "op": "return",
+      "stack_out": []
+    },
+    "160": {
+      "block": "main_expire_escrow_route@9",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "tmp%40#0"
+      ]
+    },
+    "162": {
+      "op": "!",
+      "defined_out": [
+        "tmp%41#0"
+      ],
+      "stack_out": [
+        "tmp%41#0"
+      ]
+    },
+    "163": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "164": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%42#0"
+      ],
+      "stack_out": [
+        "tmp%42#0"
+      ]
+    },
+    "166": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "167": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.expire_escrow",
+      "op": "callsub expire_escrow"
+    },
+    "170": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "171": {
+      "op": "return",
+      "stack_out": []
+    },
+    "172": {
+      "block": "main_resolve_dispute_route@8",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%34#0"
+      ],
+      "stack_out": [
+        "tmp%34#0"
+      ]
+    },
+    "174": {
+      "op": "!",
+      "defined_out": [
+        "tmp%35#0"
+      ],
+      "stack_out": [
+        "tmp%35#0"
+      ]
+    },
+    "175": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "176": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%36#0"
+      ],
+      "stack_out": [
+        "tmp%36#0"
+      ]
+    },
+    "178": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "179": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "tmp%38#0"
+      ]
+    },
+    "182": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%39#0"
+      ],
+      "stack_out": [
+        "tmp%39#0"
+      ]
+    },
+    "185": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.resolve_dispute",
+      "op": "callsub resolve_dispute",
+      "stack_out": []
+    },
+    "188": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "189": {
+      "op": "return",
+      "stack_out": []
+    },
+    "190": {
+      "block": "main_raise_dispute_route@7",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "tmp%30#0"
+      ]
+    },
+    "192": {
+      "op": "!",
+      "defined_out": [
+        "tmp%31#0"
+      ],
+      "stack_out": [
+        "tmp%31#0"
+      ]
+    },
+    "193": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "194": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%32#0"
+      ]
+    },
+    "196": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "197": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.raise_dispute",
+      "op": "callsub raise_dispute"
+    },
+    "200": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "201": {
+      "op": "return",
+      "stack_out": []
+    },
+    "202": {
+      "block": "main_refund_funds_to_buyer_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%26#0"
+      ],
+      "stack_out": [
+        "tmp%26#0"
+      ]
+    },
+    "204": {
+      "op": "!",
+      "defined_out": [
+        "tmp%27#0"
+      ],
+      "stack_out": [
+        "tmp%27#0"
+      ]
+    },
+    "205": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "206": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "tmp%28#0"
+      ]
+    },
+    "208": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "209": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.refund_funds_to_buyer",
+      "op": "callsub refund_funds_to_buyer"
+    },
+    "212": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "213": {
+      "op": "return",
+      "stack_out": []
+    },
+    "214": {
+      "block": "main_release_funds_to_seller_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "tmp%22#0"
+      ]
+    },
+    "216": {
+      "op": "!",
+      "defined_out": [
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%23#0"
+      ]
+    },
+    "217": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "218": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%24#0"
+      ]
+    },
+    "220": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "221": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.release_funds_to_seller",
+      "op": "callsub release_funds_to_seller"
+    },
+    "224": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "225": {
+      "op": "return",
+      "stack_out": []
+    },
+    "226": {
+      "block": "main_deposit_funds_route@4",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%17#0"
+      ]
+    },
+    "228": {
+      "op": "!",
+      "defined_out": [
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%18#0"
+      ]
+    },
+    "229": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "230": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%19#0"
+      ],
+      "stack_out": [
+        "tmp%19#0"
+      ]
+    },
+    "232": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "233": {
+      "op": "txn GroupIndex",
+      "defined_out": [
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0"
+      ]
+    },
+    "235": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1",
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0",
+        "1"
+      ]
+    },
+    "236": {
+      "op": "-",
+      "defined_out": [
+        "gtxn_idx%0#0"
+      ],
+      "stack_out": [
+        "gtxn_idx%0#0"
+      ]
+    },
+    "237": {
+      "op": "dup",
+      "defined_out": [
+        "gtxn_idx%0#0",
+        "gtxn_idx%0#0 (copy)"
+      ],
+      "stack_out": [
+        "gtxn_idx%0#0",
+        "gtxn_idx%0#0 (copy)"
+      ]
+    },
+    "238": {
+      "op": "gtxns TypeEnum",
+      "defined_out": [
+        "gtxn_idx%0#0",
+        "gtxn_type%0#0"
+      ],
+      "stack_out": [
+        "gtxn_idx%0#0",
+        "gtxn_type%0#0"
+      ]
+    },
+    "240": {
+      "op": "intc_1 // pay",
+      "defined_out": [
+        "gtxn_idx%0#0",
+        "gtxn_type%0#0",
+        "pay"
+      ],
+      "stack_out": [
+        "gtxn_idx%0#0",
+        "gtxn_type%0#0",
+        "pay"
+      ]
+    },
+    "241": {
+      "op": "==",
+      "defined_out": [
+        "gtxn_idx%0#0",
+        "gtxn_type_matches%0#0"
+      ],
+      "stack_out": [
+        "gtxn_idx%0#0",
+        "gtxn_type_matches%0#0"
+      ]
+    },
+    "242": {
+      "error": "transaction type is pay",
+      "op": "assert // transaction type is pay",
+      "stack_out": [
+        "gtxn_idx%0#0"
+      ]
+    },
+    "243": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.deposit_funds",
+      "op": "callsub deposit_funds",
+      "stack_out": []
+    },
+    "246": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "247": {
+      "op": "return",
+      "stack_out": []
+    },
+    "248": {
+      "block": "main_create_application_route@3",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "250": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "251": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "252": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "254": {
+      "op": "!",
+      "defined_out": [
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "tmp%6#0"
+      ]
+    },
+    "255": {
+      "error": "can only call when creating",
+      "op": "assert // can only call when creating",
+      "stack_out": []
+    },
+    "256": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%0#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%0#0"
+      ]
+    },
+    "259": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "260": {
+      "op": "txnas Assets",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0"
+      ]
+    },
+    "262": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[8]%0#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "reinterpret_bytes[8]%0#0"
+      ]
+    },
+    "265": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0"
+      ]
+    },
+    "266": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "reinterpret_bytes[1]%1#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "reinterpret_bytes[1]%1#0"
+      ]
+    },
+    "269": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%10#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%10#0"
+      ]
+    },
+    "270": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%11#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0"
+      ]
+    },
+    "272": {
+      "op": "txna ApplicationArgs 4",
+      "defined_out": [
+        "reinterpret_bytes[1]%2#0",
+        "tmp%11#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "reinterpret_bytes[1]%2#0"
+      ]
+    },
+    "275": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%11#0",
+        "tmp%12#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "tmp%12#0"
+      ]
+    },
+    "276": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "tmp%13#0"
+      ]
+    },
+    "278": {
+      "op": "txna ApplicationArgs 5",
+      "defined_out": [
+        "reinterpret_bytes[1]%3#0",
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "tmp%13#0",
+        "reinterpret_bytes[1]%3#0"
+      ]
+    },
+    "281": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%14#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%14#0"
+      ]
+    },
+    "282": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%15#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%15#0"
+      ]
+    },
+    "284": {
+      "op": "txna ApplicationArgs 6",
+      "defined_out": [
+        "reinterpret_bytes[8]%1#0",
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%15#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%15#0",
+        "reinterpret_bytes[8]%1#0"
+      ]
+    },
+    "287": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%15#0",
+        "tmp%16#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%11#0",
+        "tmp%13#0",
+        "tmp%15#0",
+        "tmp%16#0"
+      ]
+    },
+    "288": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.create_application",
+      "op": "callsub create_application",
+      "stack_out": []
+    },
+    "291": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "292": {
+      "op": "return",
+      "stack_out": []
+    },
+    "293": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.create_application",
+      "params": {
+        "asset_id#0": "uint64",
+        "value#0": "uint64",
+        "seller#0": "bytes",
+        "buyer#0": "bytes",
+        "arbitrator#0": "bytes",
+        "escrow_duration#0": "uint64"
+      },
+      "block": "create_application",
+      "stack_in": [],
+      "op": "proto 6 0"
+    },
+    "296": {
+      "op": "pushbytes \"asset_id\"",
+      "defined_out": [
+        "\"asset_id\""
+      ],
+      "stack_out": [
+        "\"asset_id\""
+      ]
+    },
+    "306": {
+      "op": "frame_dig -6",
+      "defined_out": [
+        "\"asset_id\"",
+        "asset_id#0 (copy)"
+      ],
+      "stack_out": [
+        "\"asset_id\"",
+        "asset_id#0 (copy)"
+      ]
+    },
+    "308": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "309": {
+      "op": "bytec_2 // \"value\"",
+      "defined_out": [
+        "\"value\""
+      ],
+      "stack_out": [
+        "\"value\""
+      ]
+    },
+    "310": {
+      "op": "frame_dig -5",
+      "defined_out": [
+        "\"value\"",
+        "value#0 (copy)"
+      ],
+      "stack_out": [
+        "\"value\"",
+        "value#0 (copy)"
+      ]
+    },
+    "312": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "313": {
+      "op": "bytec_3 // \"seller\"",
+      "defined_out": [
+        "\"seller\""
+      ],
+      "stack_out": [
+        "\"seller\""
+      ]
+    },
+    "314": {
+      "op": "frame_dig -4",
+      "defined_out": [
+        "\"seller\"",
+        "seller#0 (copy)"
+      ],
+      "stack_out": [
+        "\"seller\"",
+        "seller#0 (copy)"
+      ]
+    },
+    "316": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "317": {
+      "op": "bytec_1 // \"buyer\"",
+      "defined_out": [
+        "\"buyer\""
+      ],
+      "stack_out": [
+        "\"buyer\""
+      ]
+    },
+    "318": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "\"buyer\"",
+        "buyer#0 (copy)"
+      ],
+      "stack_out": [
+        "\"buyer\"",
+        "buyer#0 (copy)"
+      ]
+    },
+    "320": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "321": {
+      "op": "bytec 4 // \"arbitrator\"",
+      "defined_out": [
+        "\"arbitrator\""
+      ],
+      "stack_out": [
+        "\"arbitrator\""
+      ]
+    },
+    "323": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"arbitrator\"",
+        "arbitrator#0 (copy)"
+      ],
+      "stack_out": [
+        "\"arbitrator\"",
+        "arbitrator#0 (copy)"
+      ]
+    },
+    "325": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "326": {
+      "op": "global LatestTimestamp",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "328": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "escrow_duration#0 (copy)",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "escrow_duration#0 (copy)"
+      ]
+    },
+    "330": {
+      "op": "+",
+      "defined_out": [
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "new_state_value%0#0"
+      ]
+    },
+    "331": {
+      "op": "bytec 6 // \"escrow_expiry\"",
+      "defined_out": [
+        "\"escrow_expiry\"",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "new_state_value%0#0",
+        "\"escrow_expiry\""
+      ]
+    },
+    "333": {
+      "op": "swap",
+      "stack_out": [
+        "\"escrow_expiry\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "334": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "335": {
+      "op": "bytec 5 // \"is_disputed\"",
+      "defined_out": [
+        "\"is_disputed\""
+      ],
+      "stack_out": [
+        "\"is_disputed\""
+      ]
+    },
+    "337": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "\"is_disputed\"",
+        "0"
+      ],
+      "stack_out": [
+        "\"is_disputed\"",
+        "0"
+      ]
+    },
+    "338": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "339": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\""
+      ],
+      "stack_out": [
+        "\"is_settled\""
+      ]
+    },
+    "340": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "\"is_settled\"",
+        "0"
+      ]
+    },
+    "341": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "342": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "343": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.deposit_funds",
+      "params": {
+        "payment#0": "uint64"
+      },
+      "block": "deposit_funds",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "346": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "348": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "349": {
+      "op": "bytec_1 // \"buyer\"",
+      "defined_out": [
+        "\"buyer\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"buyer\""
+      ]
+    },
+    "350": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "351": {
+      "error": "check self.buyer exists",
+      "op": "assert // check self.buyer exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "352": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "353": {
+      "error": "Only the buyer can deposit funds",
+      "op": "assert // Only the buyer can deposit funds",
+      "stack_out": []
+    },
+    "354": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "payment#0 (copy)"
+      ],
+      "stack_out": [
+        "payment#0 (copy)"
+      ]
+    },
+    "356": {
+      "op": "gtxns Receiver",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "358": {
+      "op": "global CurrentApplicationAddress",
+      "defined_out": [
+        "tmp%2#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%2#0",
+        "tmp%3#0"
+      ]
+    },
+    "360": {
+      "op": "==",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "361": {
+      "error": "Payment must be sent to the escrow",
+      "op": "assert // Payment must be sent to the escrow",
+      "stack_out": []
+    },
+    "362": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "payment#0 (copy)"
+      ]
+    },
+    "364": {
+      "op": "gtxns Amount",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "366": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "tmp%5#0",
+        "0"
+      ]
+    },
+    "367": {
+      "op": "bytec_2 // \"value\"",
+      "defined_out": [
+        "\"value\"",
+        "0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0",
+        "0",
+        "\"value\""
+      ]
+    },
+    "368": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "369": {
+      "error": "check self.value exists",
+      "op": "assert // check self.value exists",
+      "stack_out": [
+        "tmp%5#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "370": {
+      "op": "==",
+      "defined_out": [
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "tmp%6#0"
+      ]
+    },
+    "371": {
+      "error": "Payment must match the asset price",
+      "op": "assert // Payment must match the asset price",
+      "stack_out": []
+    },
+    "372": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "373": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"is_settled\""
+      ]
+    },
+    "374": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "375": {
+      "error": "check self.is_settled exists",
+      "op": "assert // check self.is_settled exists",
+      "stack_out": [
+        "maybe_value%2#0"
+      ]
+    },
+    "376": {
+      "op": "!",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "377": {
+      "error": "Transaction is already settled",
+      "op": "assert // Transaction is already settled",
+      "stack_out": []
+    },
+    "378": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "379": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.release_funds_to_seller",
+      "params": {},
+      "block": "release_funds_to_seller",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "382": {
+      "op": "txn Sender"
+    },
+    "384": {
+      "op": "dup"
+    },
+    "385": {
+      "op": "intc_0 // 0"
+    },
+    "386": {
+      "op": "bytec_1 // \"buyer\"",
+      "defined_out": [
+        "\"buyer\"",
+        "0",
+        "awst_tmp%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "0",
+        "\"buyer\""
+      ]
+    },
+    "387": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "388": {
+      "error": "check self.buyer exists",
+      "op": "assert // check self.buyer exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "389": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "0"
+      ]
+    },
+    "390": {
+      "op": "bytec 4 // \"arbitrator\"",
+      "defined_out": [
+        "\"arbitrator\"",
+        "0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "0",
+        "\"arbitrator\""
+      ]
+    },
+    "392": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "393": {
+      "op": "swap",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "394": {
+      "op": "cover 3",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "396": {
+      "error": "check self.arbitrator exists",
+      "op": "assert // check self.arbitrator exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "397": {
+      "op": "==",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%0#0"
+      ]
+    },
+    "398": {
+      "op": "bnz release_funds_to_seller_bool_true@2",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "401": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0"
+      ]
+    },
+    "403": {
+      "op": "frame_dig 1",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "405": {
+      "op": "==",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%1#0"
+      ]
+    },
+    "406": {
+      "op": "bz release_funds_to_seller_bool_false@3",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "409": {
+      "block": "release_funds_to_seller_bool_true@2",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ],
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ]
+    },
+    "410": {
+      "block": "release_funds_to_seller_bool_merge@4",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ],
+      "error": "Only buyer or arbitrator can release funds",
+      "op": "assert // Only buyer or arbitrator can release funds",
+      "defined_out": [],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "411": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "412": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\"",
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"is_settled\""
+      ]
+    },
+    "413": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "414": {
+      "error": "check self.is_settled exists",
+      "op": "assert // check self.is_settled exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "415": {
+      "op": "!",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%2#0"
+      ]
+    },
+    "416": {
+      "error": "Transaction is already settled",
+      "op": "assert // Transaction is already settled",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "417": {
+      "op": "itxn_begin"
+    },
+    "418": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "419": {
+      "op": "bytec_3 // \"seller\"",
+      "defined_out": [
+        "\"seller\"",
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"seller\""
+      ]
+    },
+    "420": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "421": {
+      "error": "check self.seller exists",
+      "op": "assert // check self.seller exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "422": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "0"
+      ]
+    },
+    "423": {
+      "op": "bytec_2 // \"value\"",
+      "defined_out": [
+        "\"value\"",
+        "0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "0",
+        "\"value\""
+      ]
+    },
+    "424": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%4#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "maybe_exists%4#0"
+      ]
+    },
+    "425": {
+      "error": "check self.value exists",
+      "op": "assert // check self.value exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ]
+    },
+    "426": {
+      "op": "itxn_field Amount",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "428": {
+      "op": "itxn_field Receiver",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "430": {
+      "op": "intc_1 // pay",
+      "defined_out": [
+        "pay"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "pay"
+      ]
+    },
+    "431": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "433": {
+      "op": "intc_2 // 1000",
+      "defined_out": [
+        "1000"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "1000"
+      ]
+    },
+    "434": {
+      "op": "itxn_field Fee",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "436": {
+      "op": "itxn_submit"
+    },
+    "437": {
+      "op": "bytec_0 // \"is_settled\"",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "\"is_settled\""
+      ]
+    },
+    "438": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"is_settled\"",
+        "1"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "\"is_settled\"",
+        "1"
+      ]
+    },
+    "439": {
+      "op": "app_global_put",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "440": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "441": {
+      "block": "release_funds_to_seller_bool_false@3",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ]
+    },
+    "442": {
+      "op": "b release_funds_to_seller_bool_merge@4"
+    },
+    "445": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.refund_funds_to_buyer",
+      "params": {},
+      "block": "refund_funds_to_buyer",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "448": {
+      "op": "txn Sender"
+    },
+    "450": {
+      "op": "dup"
+    },
+    "451": {
+      "op": "intc_0 // 0"
+    },
+    "452": {
+      "op": "bytec_3 // \"seller\"",
+      "defined_out": [
+        "\"seller\"",
+        "0",
+        "awst_tmp%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "0",
+        "\"seller\""
+      ]
+    },
+    "453": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "454": {
+      "error": "check self.seller exists",
+      "op": "assert // check self.seller exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "455": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "0"
+      ]
+    },
+    "456": {
+      "op": "bytec 4 // \"arbitrator\"",
+      "defined_out": [
+        "\"arbitrator\"",
+        "0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "0",
+        "\"arbitrator\""
+      ]
+    },
+    "458": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "459": {
+      "op": "swap",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "460": {
+      "op": "cover 3",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "462": {
+      "error": "check self.arbitrator exists",
+      "op": "assert // check self.arbitrator exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "463": {
+      "op": "==",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%0#0"
+      ]
+    },
+    "464": {
+      "op": "bnz refund_funds_to_buyer_bool_true@2",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "467": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0"
+      ]
+    },
+    "469": {
+      "op": "frame_dig 1",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "471": {
+      "op": "==",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%1#0"
+      ]
+    },
+    "472": {
+      "op": "bz refund_funds_to_buyer_bool_false@3",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "475": {
+      "block": "refund_funds_to_buyer_bool_true@2",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ],
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ]
+    },
+    "476": {
+      "block": "refund_funds_to_buyer_bool_merge@4",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ],
+      "error": "Only seller or arbitrator can refund funds",
+      "op": "assert // Only seller or arbitrator can refund funds",
+      "defined_out": [],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "477": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "478": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\"",
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"is_settled\""
+      ]
+    },
+    "479": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "480": {
+      "error": "check self.is_settled exists",
+      "op": "assert // check self.is_settled exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "481": {
+      "op": "!",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%2#0"
+      ]
+    },
+    "482": {
+      "error": "Transaction is already settled",
+      "op": "assert // Transaction is already settled",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "483": {
+      "op": "itxn_begin"
+    },
+    "484": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "485": {
+      "op": "bytec_1 // \"buyer\"",
+      "defined_out": [
+        "\"buyer\"",
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"buyer\""
+      ]
+    },
+    "486": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "487": {
+      "error": "check self.buyer exists",
+      "op": "assert // check self.buyer exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "488": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "0"
+      ]
+    },
+    "489": {
+      "op": "bytec_2 // \"value\"",
+      "defined_out": [
+        "\"value\"",
+        "0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "0",
+        "\"value\""
+      ]
+    },
+    "490": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%4#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "maybe_exists%4#0"
+      ]
+    },
+    "491": {
+      "error": "check self.value exists",
+      "op": "assert // check self.value exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ]
+    },
+    "492": {
+      "op": "itxn_field Amount",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "494": {
+      "op": "itxn_field Receiver",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "496": {
+      "op": "intc_1 // pay",
+      "defined_out": [
+        "pay"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "pay"
+      ]
+    },
+    "497": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "499": {
+      "op": "intc_2 // 1000",
+      "defined_out": [
+        "1000"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "1000"
+      ]
+    },
+    "500": {
+      "op": "itxn_field Fee",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "502": {
+      "op": "itxn_submit"
+    },
+    "503": {
+      "op": "bytec_0 // \"is_settled\"",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "\"is_settled\""
+      ]
+    },
+    "504": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"is_settled\"",
+        "1"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "\"is_settled\"",
+        "1"
+      ]
+    },
+    "505": {
+      "op": "app_global_put",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "506": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "507": {
+      "block": "refund_funds_to_buyer_bool_false@3",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ]
+    },
+    "508": {
+      "op": "b refund_funds_to_buyer_bool_merge@4"
+    },
+    "511": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.raise_dispute",
+      "params": {},
+      "block": "raise_dispute",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "514": {
+      "op": "txn Sender"
+    },
+    "516": {
+      "op": "dup"
+    },
+    "517": {
+      "op": "intc_0 // 0"
+    },
+    "518": {
+      "op": "bytec_1 // \"buyer\"",
+      "defined_out": [
+        "\"buyer\"",
+        "0",
+        "awst_tmp%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "0",
+        "\"buyer\""
+      ]
+    },
+    "519": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "520": {
+      "error": "check self.buyer exists",
+      "op": "assert // check self.buyer exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "521": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "0"
+      ]
+    },
+    "522": {
+      "op": "bytec_3 // \"seller\"",
+      "defined_out": [
+        "\"seller\"",
+        "0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "0",
+        "\"seller\""
+      ]
+    },
+    "523": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "524": {
+      "op": "swap",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "525": {
+      "op": "cover 3",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "527": {
+      "error": "check self.seller exists",
+      "op": "assert // check self.seller exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "528": {
+      "op": "==",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%0#0"
+      ]
+    },
+    "529": {
+      "op": "bnz raise_dispute_bool_true@2",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "532": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0"
+      ]
+    },
+    "534": {
+      "op": "frame_dig 1",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "536": {
+      "op": "==",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%1#0"
+      ]
+    },
+    "537": {
+      "op": "bz raise_dispute_bool_false@3",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "540": {
+      "block": "raise_dispute_bool_true@2",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ],
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ]
+    },
+    "541": {
+      "block": "raise_dispute_bool_merge@4",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ],
+      "error": "Only buyer or seller can raise a dispute",
+      "op": "assert // Only buyer or seller can raise a dispute",
+      "defined_out": [],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "542": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "543": {
+      "op": "bytec 5 // \"is_disputed\"",
+      "defined_out": [
+        "\"is_disputed\"",
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"is_disputed\""
+      ]
+    },
+    "545": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "546": {
+      "error": "check self.is_disputed exists",
+      "op": "assert // check self.is_disputed exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "547": {
+      "op": "!",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%2#0"
+      ]
+    },
+    "548": {
+      "error": "Dispute already raised",
+      "op": "assert // Dispute already raised",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "549": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "550": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\"",
+        "0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"is_settled\""
+      ]
+    },
+    "551": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "552": {
+      "error": "check self.is_settled exists",
+      "op": "assert // check self.is_settled exists",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "553": {
+      "op": "!",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "tmp%3#0"
+      ]
+    },
+    "554": {
+      "error": "Transaction is already settled",
+      "op": "assert // Transaction is already settled",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "555": {
+      "op": "bytec 5 // \"is_disputed\"",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "\"is_disputed\""
+      ]
+    },
+    "557": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"is_disputed\"",
+        "1"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "\"is_disputed\"",
+        "1"
+      ]
+    },
+    "558": {
+      "op": "app_global_put",
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "559": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "560": {
+      "block": "raise_dispute_bool_false@3",
+      "stack_in": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "maybe_value%1#0",
+        "or_result%0#0"
+      ]
+    },
+    "561": {
+      "op": "b raise_dispute_bool_merge@4"
+    },
+    "564": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.resolve_dispute",
+      "params": {
+        "decision#0": "bytes"
+      },
+      "block": "resolve_dispute",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "567": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "569": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "570": {
+      "op": "bytec 4 // \"arbitrator\"",
+      "defined_out": [
+        "\"arbitrator\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"arbitrator\""
+      ]
+    },
+    "572": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "573": {
+      "error": "check self.arbitrator exists",
+      "op": "assert // check self.arbitrator exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "574": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "575": {
+      "error": "Only the arbitrator can resolve disputes",
+      "op": "assert // Only the arbitrator can resolve disputes",
+      "stack_out": []
+    },
+    "576": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "577": {
+      "op": "bytec 5 // \"is_disputed\"",
+      "defined_out": [
+        "\"is_disputed\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"is_disputed\""
+      ]
+    },
+    "579": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "580": {
+      "error": "check self.is_disputed exists",
+      "op": "assert // check self.is_disputed exists",
+      "stack_out": [
+        "maybe_value%1#0"
+      ]
+    },
+    "581": {
+      "error": "No dispute to resolve",
+      "op": "assert // No dispute to resolve",
+      "stack_out": []
+    },
+    "582": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "583": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"is_settled\""
+      ]
+    },
+    "584": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "585": {
+      "error": "check self.is_settled exists",
+      "op": "assert // check self.is_settled exists",
+      "stack_out": [
+        "maybe_value%2#0"
+      ]
+    },
+    "586": {
+      "op": "!",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "587": {
+      "error": "Transaction is already settled",
+      "op": "assert // Transaction is already settled",
+      "stack_out": []
+    },
+    "588": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "decision#0 (copy)"
+      ],
+      "stack_out": [
+        "decision#0 (copy)"
+      ]
+    },
+    "590": {
+      "op": "pushbytes \"release_to_seller\"",
+      "defined_out": [
+        "\"release_to_seller\"",
+        "decision#0 (copy)"
+      ],
+      "stack_out": [
+        "decision#0 (copy)",
+        "\"release_to_seller\""
+      ]
+    },
+    "609": {
+      "op": "==",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "610": {
+      "op": "bz resolve_dispute_else_body@2",
+      "stack_out": []
+    },
+    "613": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.release_funds_to_seller",
+      "op": "callsub release_funds_to_seller"
+    },
+    "616": {
+      "block": "resolve_dispute_after_if_else@6",
+      "stack_in": [],
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\""
+      ],
+      "stack_out": [
+        "\"is_settled\""
+      ]
+    },
+    "617": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"is_settled\"",
+        "1"
+      ],
+      "stack_out": [
+        "\"is_settled\"",
+        "1"
+      ]
+    },
+    "618": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "619": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "620": {
+      "block": "resolve_dispute_else_body@2",
+      "stack_in": [],
+      "op": "frame_dig -1",
+      "defined_out": [
+        "decision#0 (copy)"
+      ],
+      "stack_out": [
+        "decision#0 (copy)"
+      ]
+    },
+    "622": {
+      "op": "pushbytes \"refund_to_buyer\"",
+      "defined_out": [
+        "\"refund_to_buyer\"",
+        "decision#0 (copy)"
+      ],
+      "stack_out": [
+        "decision#0 (copy)",
+        "\"refund_to_buyer\""
+      ]
+    },
+    "639": {
+      "op": "==",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "640": {
+      "error": "Invalid decision",
+      "op": "assert // Invalid decision",
+      "stack_out": []
+    },
+    "641": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.refund_funds_to_buyer",
+      "op": "callsub refund_funds_to_buyer"
+    },
+    "644": {
+      "op": "b resolve_dispute_after_if_else@6"
+    },
+    "647": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.expire_escrow",
+      "params": {},
+      "block": "expire_escrow",
+      "stack_in": [],
+      "op": "global LatestTimestamp",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "649": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "650": {
+      "op": "bytec 6 // \"escrow_expiry\"",
+      "defined_out": [
+        "\"escrow_expiry\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"escrow_expiry\""
+      ]
+    },
+    "652": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "653": {
+      "error": "check self.escrow_expiry exists",
+      "op": "assert // check self.escrow_expiry exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "654": {
+      "op": ">=",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "655": {
+      "error": "Escrow has not expired yet",
+      "op": "assert // Escrow has not expired yet",
+      "stack_out": []
+    },
+    "656": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "657": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"is_settled\""
+      ]
+    },
+    "658": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "659": {
+      "error": "check self.is_settled exists",
+      "op": "assert // check self.is_settled exists",
+      "stack_out": [
+        "maybe_value%1#0"
+      ]
+    },
+    "660": {
+      "op": "!",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "661": {
+      "error": "Transaction is already settled",
+      "op": "assert // Transaction is already settled",
+      "stack_out": []
+    },
+    "662": {
+      "callsub": "smart_contracts.escrow_contract.contract.EscrowMarketplace.refund_funds_to_buyer",
+      "op": "callsub refund_funds_to_buyer"
+    },
+    "665": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "666": {
+      "subroutine": "smart_contracts.escrow_contract.contract.EscrowMarketplace.delete_application",
+      "params": {},
+      "block": "delete_application",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "667": {
+      "op": "bytec_0 // \"is_settled\"",
+      "defined_out": [
+        "\"is_settled\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"is_settled\""
+      ]
+    },
+    "668": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "669": {
+      "error": "check self.is_settled exists",
+      "op": "assert // check self.is_settled exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "670": {
+      "error": "Transaction must be settled before deleting",
+      "op": "assert // Transaction must be settled before deleting",
+      "stack_out": []
+    },
+    "671": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "673": {
+      "op": "global CreatorAddress",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ]
+    },
+    "675": {
+      "op": "==",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "676": {
+      "error": "Only the creator can delete the application",
+      "op": "assert // Only the creator can delete the application",
+      "stack_out": []
+    },
+    "677": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}
