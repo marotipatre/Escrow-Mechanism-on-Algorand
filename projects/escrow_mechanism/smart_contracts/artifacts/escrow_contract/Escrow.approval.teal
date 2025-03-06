@@ -6,7 +6,7 @@ main:
     intcblock 0 1 1000
     bytecblock "is_settled" "buyer" "value" "seller" "arbitrator" "is_disputed" "escrow_expiry"
     // smart_contracts/escrow_contract/contract.py:5
-    // class EscrowMarketplace(ARC4Contract):
+    // class Escrow(ARC4Contract):
     txn NumAppArgs
     bz main_after_if_else@14
     pushbytess 0x3fe4d39a 0xfdc695c2 0x31ce7597 0x34c979c9 0x4398265d 0x91b4532a 0x5121f741 0x33b3499e // method "create_application(uint64,account,account,account,uint64)void", method "deposit_funds(pay)void", method "release_funds_to_seller()void", method "refund_funds_to_buyer()void", method "raise_dispute()void", method "resolve_dispute(string)void", method "expire_escrow()void", method "delete_application()void"
@@ -15,12 +15,12 @@ main:
 
 main_after_if_else@14:
     // smart_contracts/escrow_contract/contract.py:5
-    // class EscrowMarketplace(ARC4Contract):
+    // class Escrow(ARC4Contract):
     intc_0 // 0
     return
 
 main_delete_application_route@10:
-    // smart_contracts/escrow_contract/contract.py:110-111
+    // smart_contracts/escrow_contract/contract.py:109-110
     // # Delete the application (only after settlement)
     // @abimethod(allow_actions=["DeleteApplication"])
     txn OnCompletion
@@ -34,7 +34,7 @@ main_delete_application_route@10:
     return
 
 main_expire_escrow_route@9:
-    // smart_contracts/escrow_contract/contract.py:101-102
+    // smart_contracts/escrow_contract/contract.py:100-101
     // # Time-lock: Automatically refund buyer if escrow expires
     // @abimethod()
     txn OnCompletion
@@ -47,7 +47,7 @@ main_expire_escrow_route@9:
     return
 
 main_resolve_dispute_route@8:
-    // smart_contracts/escrow_contract/contract.py:84-85
+    // smart_contracts/escrow_contract/contract.py:83-84
     // # Resolve dispute (called by arbitrator)
     // @abimethod()
     txn OnCompletion
@@ -56,10 +56,10 @@ main_resolve_dispute_route@8:
     txn ApplicationID
     assert // can only call when not creating
     // smart_contracts/escrow_contract/contract.py:5
-    // class EscrowMarketplace(ARC4Contract):
+    // class Escrow(ARC4Contract):
     txna ApplicationArgs 1
     extract 2 0
-    // smart_contracts/escrow_contract/contract.py:84-85
+    // smart_contracts/escrow_contract/contract.py:83-84
     // # Resolve dispute (called by arbitrator)
     // @abimethod()
     callsub resolve_dispute
@@ -67,7 +67,7 @@ main_resolve_dispute_route@8:
     return
 
 main_raise_dispute_route@7:
-    // smart_contracts/escrow_contract/contract.py:75-76
+    // smart_contracts/escrow_contract/contract.py:74-75
     // # Raise a dispute (called by buyer or seller)
     // @abimethod()
     txn OnCompletion
@@ -80,7 +80,7 @@ main_raise_dispute_route@7:
     return
 
 main_refund_funds_to_buyer_route@6:
-    // smart_contracts/escrow_contract/contract.py:59-60
+    // smart_contracts/escrow_contract/contract.py:58-59
     // # Refund funds to buyer (called by seller or arbitrator)
     // @abimethod()
     txn OnCompletion
@@ -93,7 +93,7 @@ main_refund_funds_to_buyer_route@6:
     return
 
 main_release_funds_to_seller_route@5:
-    // smart_contracts/escrow_contract/contract.py:43-44
+    // smart_contracts/escrow_contract/contract.py:42-43
     // # Release funds to seller (called by buyer or arbitrator)
     // @abimethod()
     txn OnCompletion
@@ -106,7 +106,7 @@ main_release_funds_to_seller_route@5:
     return
 
 main_deposit_funds_route@4:
-    // smart_contracts/escrow_contract/contract.py:35-36
+    // smart_contracts/escrow_contract/contract.py:34-35
     // # Deposit funds into escrow (called by buyer)
     // @abimethod()
     txn OnCompletion
@@ -115,7 +115,7 @@ main_deposit_funds_route@4:
     txn ApplicationID
     assert // can only call when not creating
     // smart_contracts/escrow_contract/contract.py:5
-    // class EscrowMarketplace(ARC4Contract):
+    // class Escrow(ARC4Contract):
     txn GroupIndex
     intc_1 // 1
     -
@@ -124,7 +124,7 @@ main_deposit_funds_route@4:
     intc_1 // pay
     ==
     assert // transaction type is pay
-    // smart_contracts/escrow_contract/contract.py:35-36
+    // smart_contracts/escrow_contract/contract.py:34-35
     // # Deposit funds into escrow (called by buyer)
     // @abimethod()
     callsub deposit_funds
@@ -132,7 +132,7 @@ main_deposit_funds_route@4:
     return
 
 main_create_application_route@3:
-    // smart_contracts/escrow_contract/contract.py:18
+    // smart_contracts/escrow_contract/contract.py:17
     // @abimethod(allow_actions=["NoOp"], create="require")
     txn OnCompletion
     !
@@ -141,7 +141,7 @@ main_create_application_route@3:
     !
     assert // can only call when creating
     // smart_contracts/escrow_contract/contract.py:5
-    // class EscrowMarketplace(ARC4Contract):
+    // class Escrow(ARC4Contract):
     txna ApplicationArgs 1
     btoi
     txna ApplicationArgs 2
@@ -155,16 +155,16 @@ main_create_application_route@3:
     txnas Accounts
     txna ApplicationArgs 5
     btoi
-    // smart_contracts/escrow_contract/contract.py:18
+    // smart_contracts/escrow_contract/contract.py:17
     // @abimethod(allow_actions=["NoOp"], create="require")
     callsub create_application
     intc_1 // 1
     return
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.create_application(value: uint64, seller: bytes, buyer: bytes, arbitrator: bytes, escrow_duration: uint64) -> void:
+// smart_contracts.escrow_contract.contract.Escrow.create_application(value: uint64, seller: bytes, buyer: bytes, arbitrator: bytes, escrow_duration: uint64) -> void:
 create_application:
-    // smart_contracts/escrow_contract/contract.py:18-26
+    // smart_contracts/escrow_contract/contract.py:17-25
     // @abimethod(allow_actions=["NoOp"], create="require")
     // def create_application(
     //     self,
@@ -175,27 +175,27 @@ create_application:
     //     escrow_duration: UInt64,  # Duration in seconds
     // ) -> None:
     proto 5 0
-    // smart_contracts/escrow_contract/contract.py:27
+    // smart_contracts/escrow_contract/contract.py:26
     // self.value = value
     bytec_2 // "value"
     frame_dig -5
     app_global_put
-    // smart_contracts/escrow_contract/contract.py:28
+    // smart_contracts/escrow_contract/contract.py:27
     // self.seller = seller
     bytec_3 // "seller"
     frame_dig -4
     app_global_put
-    // smart_contracts/escrow_contract/contract.py:29
+    // smart_contracts/escrow_contract/contract.py:28
     // self.buyer = buyer
     bytec_1 // "buyer"
     frame_dig -3
     app_global_put
-    // smart_contracts/escrow_contract/contract.py:30
+    // smart_contracts/escrow_contract/contract.py:29
     // self.arbitrator = arbitrator
     bytec 4 // "arbitrator"
     frame_dig -2
     app_global_put
-    // smart_contracts/escrow_contract/contract.py:31
+    // smart_contracts/escrow_contract/contract.py:30
     // self.escrow_expiry = Global.latest_timestamp + escrow_duration
     global LatestTimestamp
     frame_dig -1
@@ -203,12 +203,12 @@ create_application:
     bytec 6 // "escrow_expiry"
     swap
     app_global_put
-    // smart_contracts/escrow_contract/contract.py:32
+    // smart_contracts/escrow_contract/contract.py:31
     // self.is_disputed = False
     bytec 5 // "is_disputed"
     intc_0 // 0
     app_global_put
-    // smart_contracts/escrow_contract/contract.py:33
+    // smart_contracts/escrow_contract/contract.py:32
     // self.is_settled = False
     bytec_0 // "is_settled"
     intc_0 // 0
@@ -216,14 +216,14 @@ create_application:
     retsub
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.deposit_funds(payment: uint64) -> void:
+// smart_contracts.escrow_contract.contract.Escrow.deposit_funds(payment: uint64) -> void:
 deposit_funds:
-    // smart_contracts/escrow_contract/contract.py:35-37
+    // smart_contracts/escrow_contract/contract.py:34-36
     // # Deposit funds into escrow (called by buyer)
     // @abimethod()
     // def deposit_funds(self, payment: gtxn.PaymentTransaction) -> None:
     proto 1 0
-    // smart_contracts/escrow_contract/contract.py:38
+    // smart_contracts/escrow_contract/contract.py:37
     // assert Txn.sender == self.buyer, "Only the buyer can deposit funds"
     txn Sender
     intc_0 // 0
@@ -232,14 +232,14 @@ deposit_funds:
     assert // check self.buyer exists
     ==
     assert // Only the buyer can deposit funds
-    // smart_contracts/escrow_contract/contract.py:39
+    // smart_contracts/escrow_contract/contract.py:38
     // assert payment.receiver == Global.current_application_address, "Payment must be sent to the escrow"
     frame_dig -1
     gtxns Receiver
     global CurrentApplicationAddress
     ==
     assert // Payment must be sent to the escrow
-    // smart_contracts/escrow_contract/contract.py:40
+    // smart_contracts/escrow_contract/contract.py:39
     // assert payment.amount == self.value, "Payment must match the asset price"
     frame_dig -1
     gtxns Amount
@@ -249,7 +249,7 @@ deposit_funds:
     assert // check self.value exists
     ==
     assert // Payment must match the asset price
-    // smart_contracts/escrow_contract/contract.py:41
+    // smart_contracts/escrow_contract/contract.py:40
     // assert not self.is_settled, "Transaction is already settled"
     intc_0 // 0
     bytec_0 // "is_settled"
@@ -260,14 +260,14 @@ deposit_funds:
     retsub
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.release_funds_to_seller() -> void:
+// smart_contracts.escrow_contract.contract.Escrow.release_funds_to_seller() -> void:
 release_funds_to_seller:
-    // smart_contracts/escrow_contract/contract.py:43-45
+    // smart_contracts/escrow_contract/contract.py:42-44
     // # Release funds to seller (called by buyer or arbitrator)
     // @abimethod()
     // def release_funds_to_seller(self) -> None:
     proto 0 0
-    // smart_contracts/escrow_contract/contract.py:46
+    // smart_contracts/escrow_contract/contract.py:45
     // assert Txn.sender in (self.buyer, self.arbitrator), "Only buyer or arbitrator can release funds"
     txn Sender
     dup
@@ -292,10 +292,10 @@ release_funds_to_seller_bool_true@2:
     intc_1 // 1
 
 release_funds_to_seller_bool_merge@4:
-    // smart_contracts/escrow_contract/contract.py:46
+    // smart_contracts/escrow_contract/contract.py:45
     // assert Txn.sender in (self.buyer, self.arbitrator), "Only buyer or arbitrator can release funds"
     assert // Only buyer or arbitrator can release funds
-    // smart_contracts/escrow_contract/contract.py:47
+    // smart_contracts/escrow_contract/contract.py:46
     // assert not self.is_settled, "Transaction is already settled"
     intc_0 // 0
     bytec_0 // "is_settled"
@@ -303,7 +303,7 @@ release_funds_to_seller_bool_merge@4:
     assert // check self.is_settled exists
     !
     assert // Transaction is already settled
-    // smart_contracts/escrow_contract/contract.py:49-54
+    // smart_contracts/escrow_contract/contract.py:48-53
     // # Transfer funds to seller
     // itxn.Payment(
     //     receiver=self.seller,
@@ -311,13 +311,13 @@ release_funds_to_seller_bool_merge@4:
     //     fee=1_000,
     // ).submit()
     itxn_begin
-    // smart_contracts/escrow_contract/contract.py:51
+    // smart_contracts/escrow_contract/contract.py:50
     // receiver=self.seller,
     intc_0 // 0
     bytec_3 // "seller"
     app_global_get_ex
     assert // check self.seller exists
-    // smart_contracts/escrow_contract/contract.py:52
+    // smart_contracts/escrow_contract/contract.py:51
     // amount=self.value,
     intc_0 // 0
     bytec_2 // "value"
@@ -325,16 +325,16 @@ release_funds_to_seller_bool_merge@4:
     assert // check self.value exists
     itxn_field Amount
     itxn_field Receiver
-    // smart_contracts/escrow_contract/contract.py:49-50
+    // smart_contracts/escrow_contract/contract.py:48-49
     // # Transfer funds to seller
     // itxn.Payment(
     intc_1 // pay
     itxn_field TypeEnum
-    // smart_contracts/escrow_contract/contract.py:53
+    // smart_contracts/escrow_contract/contract.py:52
     // fee=1_000,
     intc_2 // 1000
     itxn_field Fee
-    // smart_contracts/escrow_contract/contract.py:49-54
+    // smart_contracts/escrow_contract/contract.py:48-53
     // # Transfer funds to seller
     // itxn.Payment(
     //     receiver=self.seller,
@@ -342,7 +342,7 @@ release_funds_to_seller_bool_merge@4:
     //     fee=1_000,
     // ).submit()
     itxn_submit
-    // smart_contracts/escrow_contract/contract.py:56-57
+    // smart_contracts/escrow_contract/contract.py:55-56
     // # Mark as settled
     // self.is_settled = True
     bytec_0 // "is_settled"
@@ -355,14 +355,14 @@ release_funds_to_seller_bool_false@3:
     b release_funds_to_seller_bool_merge@4
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.refund_funds_to_buyer() -> void:
+// smart_contracts.escrow_contract.contract.Escrow.refund_funds_to_buyer() -> void:
 refund_funds_to_buyer:
-    // smart_contracts/escrow_contract/contract.py:59-61
+    // smart_contracts/escrow_contract/contract.py:58-60
     // # Refund funds to buyer (called by seller or arbitrator)
     // @abimethod()
     // def refund_funds_to_buyer(self) -> None:
     proto 0 0
-    // smart_contracts/escrow_contract/contract.py:62
+    // smart_contracts/escrow_contract/contract.py:61
     // assert Txn.sender in (self.seller, self.arbitrator), "Only seller or arbitrator can refund funds"
     txn Sender
     dup
@@ -387,10 +387,10 @@ refund_funds_to_buyer_bool_true@2:
     intc_1 // 1
 
 refund_funds_to_buyer_bool_merge@4:
-    // smart_contracts/escrow_contract/contract.py:62
+    // smart_contracts/escrow_contract/contract.py:61
     // assert Txn.sender in (self.seller, self.arbitrator), "Only seller or arbitrator can refund funds"
     assert // Only seller or arbitrator can refund funds
-    // smart_contracts/escrow_contract/contract.py:63
+    // smart_contracts/escrow_contract/contract.py:62
     // assert not self.is_settled, "Transaction is already settled"
     intc_0 // 0
     bytec_0 // "is_settled"
@@ -398,7 +398,7 @@ refund_funds_to_buyer_bool_merge@4:
     assert // check self.is_settled exists
     !
     assert // Transaction is already settled
-    // smart_contracts/escrow_contract/contract.py:65-70
+    // smart_contracts/escrow_contract/contract.py:64-69
     // # Transfer funds back to buyer
     // itxn.Payment(
     //     receiver=self.buyer,
@@ -406,13 +406,13 @@ refund_funds_to_buyer_bool_merge@4:
     //     fee=1_000,
     // ).submit()
     itxn_begin
-    // smart_contracts/escrow_contract/contract.py:67
+    // smart_contracts/escrow_contract/contract.py:66
     // receiver=self.buyer,
     intc_0 // 0
     bytec_1 // "buyer"
     app_global_get_ex
     assert // check self.buyer exists
-    // smart_contracts/escrow_contract/contract.py:68
+    // smart_contracts/escrow_contract/contract.py:67
     // amount=self.value,
     intc_0 // 0
     bytec_2 // "value"
@@ -420,16 +420,16 @@ refund_funds_to_buyer_bool_merge@4:
     assert // check self.value exists
     itxn_field Amount
     itxn_field Receiver
-    // smart_contracts/escrow_contract/contract.py:65-66
+    // smart_contracts/escrow_contract/contract.py:64-65
     // # Transfer funds back to buyer
     // itxn.Payment(
     intc_1 // pay
     itxn_field TypeEnum
-    // smart_contracts/escrow_contract/contract.py:69
+    // smart_contracts/escrow_contract/contract.py:68
     // fee=1_000,
     intc_2 // 1000
     itxn_field Fee
-    // smart_contracts/escrow_contract/contract.py:65-70
+    // smart_contracts/escrow_contract/contract.py:64-69
     // # Transfer funds back to buyer
     // itxn.Payment(
     //     receiver=self.buyer,
@@ -437,7 +437,7 @@ refund_funds_to_buyer_bool_merge@4:
     //     fee=1_000,
     // ).submit()
     itxn_submit
-    // smart_contracts/escrow_contract/contract.py:72-73
+    // smart_contracts/escrow_contract/contract.py:71-72
     // # Mark as settled
     // self.is_settled = True
     bytec_0 // "is_settled"
@@ -450,14 +450,14 @@ refund_funds_to_buyer_bool_false@3:
     b refund_funds_to_buyer_bool_merge@4
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.raise_dispute() -> void:
+// smart_contracts.escrow_contract.contract.Escrow.raise_dispute() -> void:
 raise_dispute:
-    // smart_contracts/escrow_contract/contract.py:75-77
+    // smart_contracts/escrow_contract/contract.py:74-76
     // # Raise a dispute (called by buyer or seller)
     // @abimethod()
     // def raise_dispute(self) -> None:
     proto 0 0
-    // smart_contracts/escrow_contract/contract.py:78
+    // smart_contracts/escrow_contract/contract.py:77
     // assert Txn.sender in (self.buyer, self.seller), "Only buyer or seller can raise a dispute"
     txn Sender
     dup
@@ -482,10 +482,10 @@ raise_dispute_bool_true@2:
     intc_1 // 1
 
 raise_dispute_bool_merge@4:
-    // smart_contracts/escrow_contract/contract.py:78
+    // smart_contracts/escrow_contract/contract.py:77
     // assert Txn.sender in (self.buyer, self.seller), "Only buyer or seller can raise a dispute"
     assert // Only buyer or seller can raise a dispute
-    // smart_contracts/escrow_contract/contract.py:79
+    // smart_contracts/escrow_contract/contract.py:78
     // assert not self.is_disputed, "Dispute already raised"
     intc_0 // 0
     bytec 5 // "is_disputed"
@@ -493,7 +493,7 @@ raise_dispute_bool_merge@4:
     assert // check self.is_disputed exists
     !
     assert // Dispute already raised
-    // smart_contracts/escrow_contract/contract.py:80
+    // smart_contracts/escrow_contract/contract.py:79
     // assert not self.is_settled, "Transaction is already settled"
     intc_0 // 0
     bytec_0 // "is_settled"
@@ -501,7 +501,7 @@ raise_dispute_bool_merge@4:
     assert // check self.is_settled exists
     !
     assert // Transaction is already settled
-    // smart_contracts/escrow_contract/contract.py:82
+    // smart_contracts/escrow_contract/contract.py:81
     // self.is_disputed = True
     bytec 5 // "is_disputed"
     intc_1 // 1
@@ -513,14 +513,14 @@ raise_dispute_bool_false@3:
     b raise_dispute_bool_merge@4
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.resolve_dispute(decision: bytes) -> void:
+// smart_contracts.escrow_contract.contract.Escrow.resolve_dispute(decision: bytes) -> void:
 resolve_dispute:
-    // smart_contracts/escrow_contract/contract.py:84-86
+    // smart_contracts/escrow_contract/contract.py:83-85
     // # Resolve dispute (called by arbitrator)
     // @abimethod()
     // def resolve_dispute(self, decision: String) -> None:
     proto 1 0
-    // smart_contracts/escrow_contract/contract.py:87
+    // smart_contracts/escrow_contract/contract.py:86
     // assert Txn.sender == self.arbitrator, "Only the arbitrator can resolve disputes"
     txn Sender
     intc_0 // 0
@@ -529,14 +529,14 @@ resolve_dispute:
     assert // check self.arbitrator exists
     ==
     assert // Only the arbitrator can resolve disputes
-    // smart_contracts/escrow_contract/contract.py:88
+    // smart_contracts/escrow_contract/contract.py:87
     // assert self.is_disputed, "No dispute to resolve"
     intc_0 // 0
     bytec 5 // "is_disputed"
     app_global_get_ex
     assert // check self.is_disputed exists
     assert // No dispute to resolve
-    // smart_contracts/escrow_contract/contract.py:89
+    // smart_contracts/escrow_contract/contract.py:88
     // assert not self.is_settled, "Transaction is already settled"
     intc_0 // 0
     bytec_0 // "is_settled"
@@ -544,18 +544,18 @@ resolve_dispute:
     assert // check self.is_settled exists
     !
     assert // Transaction is already settled
-    // smart_contracts/escrow_contract/contract.py:91
+    // smart_contracts/escrow_contract/contract.py:90
     // if decision == "release_to_seller":
     frame_dig -1
     pushbytes "release_to_seller"
     ==
     bz resolve_dispute_else_body@2
-    // smart_contracts/escrow_contract/contract.py:92
+    // smart_contracts/escrow_contract/contract.py:91
     // self.release_funds_to_seller()
     callsub release_funds_to_seller
 
 resolve_dispute_after_if_else@6:
-    // smart_contracts/escrow_contract/contract.py:98-99
+    // smart_contracts/escrow_contract/contract.py:97-98
     // # Mark as settled
     // self.is_settled = True
     bytec_0 // "is_settled"
@@ -564,21 +564,21 @@ resolve_dispute_after_if_else@6:
     retsub
 
 resolve_dispute_else_body@2:
-    // smart_contracts/escrow_contract/contract.py:93
+    // smart_contracts/escrow_contract/contract.py:92
     // elif decision == "refund_to_buyer":
     frame_dig -1
     pushbytes "refund_to_buyer"
     ==
     assert // Invalid decision
-    // smart_contracts/escrow_contract/contract.py:94
+    // smart_contracts/escrow_contract/contract.py:93
     // self.refund_funds_to_buyer()
     callsub refund_funds_to_buyer
     b resolve_dispute_after_if_else@6
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.expire_escrow() -> void:
+// smart_contracts.escrow_contract.contract.Escrow.expire_escrow() -> void:
 expire_escrow:
-    // smart_contracts/escrow_contract/contract.py:104
+    // smart_contracts/escrow_contract/contract.py:103
     // assert Global.latest_timestamp >= self.escrow_expiry, "Escrow has not expired yet"
     global LatestTimestamp
     intc_0 // 0
@@ -587,7 +587,7 @@ expire_escrow:
     assert // check self.escrow_expiry exists
     >=
     assert // Escrow has not expired yet
-    // smart_contracts/escrow_contract/contract.py:105
+    // smart_contracts/escrow_contract/contract.py:104
     // assert not self.is_settled, "Transaction is already settled"
     intc_0 // 0
     bytec_0 // "is_settled"
@@ -595,23 +595,23 @@ expire_escrow:
     assert // check self.is_settled exists
     !
     assert // Transaction is already settled
-    // smart_contracts/escrow_contract/contract.py:107-108
+    // smart_contracts/escrow_contract/contract.py:106-107
     // # Refund buyer
     // self.refund_funds_to_buyer()
     callsub refund_funds_to_buyer
     retsub
 
 
-// smart_contracts.escrow_contract.contract.EscrowMarketplace.delete_application() -> void:
+// smart_contracts.escrow_contract.contract.Escrow.delete_application() -> void:
 delete_application:
-    // smart_contracts/escrow_contract/contract.py:113
+    // smart_contracts/escrow_contract/contract.py:112
     // assert self.is_settled, "Transaction must be settled before deleting"
     intc_0 // 0
     bytec_0 // "is_settled"
     app_global_get_ex
     assert // check self.is_settled exists
     assert // Transaction must be settled before deleting
-    // smart_contracts/escrow_contract/contract.py:114
+    // smart_contracts/escrow_contract/contract.py:113
     // assert Txn.sender == Global.creator_address, "Only the creator can delete the application"
     txn Sender
     global CreatorAddress

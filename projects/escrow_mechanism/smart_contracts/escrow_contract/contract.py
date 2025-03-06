@@ -2,7 +2,7 @@ from algopy import *
 from algopy.arc4 import abimethod
 
 
-class EscrowMarketplace(ARC4Contract):
+class Escrow(ARC4Contract):
     # State variables
     seller: Account
     buyer: Account
@@ -97,7 +97,7 @@ class EscrowMarketplace(ARC4Contract):
         # Mark as settled
         self.is_settled = True
 
-    # Time-lock: Automatically refund buyer if escrow expires
+    # refund buyer if escrow expires
     @abimethod()
     def expire_escrow(self) -> None:
         assert Global.latest_timestamp >= self.escrow_expiry, "Escrow has not expired yet"
